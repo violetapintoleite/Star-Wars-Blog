@@ -13,7 +13,7 @@ const Planets = () => {
     <>
     {
       store.planets.map((planet, index) =>{
-        return(
+        if(index>1){return(
           <div key={index} className="card" Style="width: 18rem;">
             <img src={`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`} className="card-img-top" alt="..."></img>
             <div className="card-body">
@@ -24,7 +24,8 @@ const Planets = () => {
                   </Link>
             </div>
           </div>
-        )  
+        )  }
+        
       })
     }
     
