@@ -15,7 +15,7 @@ const Planets = () => {
       store.planets.map((planet, index) =>{
         return(
           <div key={index} className="card" Style="width: 18rem;">
-            <img src="..." className="card-img-top" alt="..."></img>
+            <img src={`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`} className="card-img-top" alt="..."></img>
             <div className="card-body">
               <h5 className="card-title">{planet.name}</h5>
               <p className="card-text">{planet.url}</p>
