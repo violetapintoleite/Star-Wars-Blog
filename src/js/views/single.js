@@ -6,9 +6,11 @@ import { Context } from "../store/appContext";
 export const Single = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
+
+
 	return (
 		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1>
+			<h1 className="display-4">This will show the card element:</h1>
 
 			<hr className="my-4" />
 
@@ -18,9 +20,14 @@ export const Single = props => {
 				</span>
 			</Link>
 		</div>
+
 	);
+
+	
 };
 
 Single.propTypes = {
-	match: PropTypes.object
+	match: PropTypes.object,
+	person: PropTypes.array,
+	url: PropTypes.string,
 };

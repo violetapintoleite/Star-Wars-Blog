@@ -12,7 +12,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			
+			people: [],
+			planets: [],
+			starships: [],
+			person: [],
+			planet:[],
+			starship: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -20,9 +27,45 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor(0, "green");
 			},
 			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+				const store = getStore();
+
+			 fetch("https://www.swapi.tech/api/people/", {method: "GET"})
+			 .then((resp)=>resp.json())
+			 .then(data => setStore({ "people": data.results }));
+
+			 fetch("https://www.swapi.tech/api/planets/", {method: "GET"})
+			 .then((resp)=>resp.json())
+			 .then(data => setStore({ "planets": data.results }));
+
+			 fetch("https://www.swapi.tech/api/starships/", {method: "GET"})
+			 .then((resp)=>resp.json())
+			 .then(data => setStore({ "starships": data.results }));
+
+
+			},
+			loadPeopleData:(url) => {
+				const store = getStore();
+				console.log("url",url);
+				fetch(`${url}`, {method: "GET"})
+				.then((resp)=>resp.json())
+				.then(data => setStore({"person": data.result}));
+				console.log(store.person);
+			},
+			loadPlanetsData:(url) => {
+				const store = getStore();
+				console.log("url",url);
+				fetch(`${url}`, {method: "GET"})
+				.then((resp)=>resp.json())
+				.then(data => setStore({"planet": data.result}));
+				console.log(store.planets);
+			},
+			loadStarshipsData:(url) => {
+				const store = getStore();
+				console.log("url",url);
+				fetch(`${url}`, {method: "GET"})
+				.then((resp)=>resp.json())
+				.then(data => setStore({"starship": data.result}));
+				console.log(store.starship);
 			},
 			changeColor: (index, color) => {
 				//get the store

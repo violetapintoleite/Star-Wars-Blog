@@ -23,7 +23,7 @@ const Layout = () => {
 					<Navbar />
 					<Switch>
 						<Route exact path="/">
-							<Home />
+						<Home />
 						</Route>
 						<Route exact path="/demo">
 							<Demo />
