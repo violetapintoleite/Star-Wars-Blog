@@ -19,7 +19,7 @@ const People = () => {
             <div className="card-body">
               <h5 className="card-title">{person.name}</h5>
               <p className="card-text">{person.url}</p>
-              <Link to={"/single/" + index} url={person.url} onClick={actions.loadSpecificData(`${person.url}`)}>
+              <Link to={"/single/" + index} url={person.url} onClick={actions.loadPeopleData(`${person.url}`)}>
                 <a href="#" className="btn btn-primary">Go somewhere</a>
                 </Link>
               

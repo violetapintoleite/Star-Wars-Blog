@@ -19,7 +19,7 @@ const Planets = () => {
             <div className="card-body">
               <h5 className="card-title">{planet.name}</h5>
               <p className="card-text">{planet.url}</p>
-              <Link to={"/single/" + index} url={planet.url} onClick={actions.loadSpecificData(`${planet.url}`)}>
+              <Link to={"/single/" + index} url={planet.url} onClick={actions.loadPlanetsData(`${planet.url}`)}>
                   <a href="#" className="btn btn-primary" >Go somewhere</a>
                   </Link>
             </div>

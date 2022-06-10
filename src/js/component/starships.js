@@ -19,7 +19,7 @@ const Starships = () => {
             <div className="card-body">
               <h5 className="card-title">{starship.name}</h5>
               <p className="card-text">{starship.url}</p>
-              <Link to={"/single/" + index} url={starship.url}>
+              <Link to={"/single/" + index} url={starship.url} onClick={actions.loadStarshipsData(`${starship.url}`)}>
                   <a href="#" className="btn btn-primary">Go somewhere</a>
                 </Link>
               
