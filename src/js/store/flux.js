@@ -19,7 +19,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			starships: [],
 			person: [],
 			planet:[],
-			starship: []
+			starship: [],
+			favourites: [],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -66,6 +67,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then((resp)=>resp.json())
 				.then(data => setStore({"starship": data.result.properties}));
 				console.log(store.starship);
+			},
+			addToFavourites:(name) =>{
+				const store = getStore();
+				setStore(store.favourites.push({name}));
+				console.log(store.favourites);
 			},
 			changeColor: (index, color) => {
 				//get the store

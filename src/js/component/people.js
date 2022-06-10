@@ -22,6 +22,7 @@ const People = () => {
               <Link to={"/PeopleView/" + person.uid}>
                 <a href="#" className="btn btn-primary">More Details</a>
                 </Link>
+                <a href="#" className="btn btn-secondary" onClick={()=>actions.addToFavourites(`${person.name}`)}>♡</a>
               
             </div>
           </div>
