@@ -11,16 +11,17 @@ export const Navbar = () => {
 				<span className="navbar-brand mb-0 h1">Star Wars</span>
 			</Link>
 			<div className="ml-auto">
-			<div class="dropdown">
+			<div className="dropdown">
   <button class="btn btn-primary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     Favourites
   </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-	{store.favourites.length > 0 ? 
-	store.favourites.map((item, index)=>{
-		<li>{item.name}</li>
-	}) : <li><a class="dropdown-item" href="#">Empty</a></li>}
-    
+  <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+	{store.favourites.length > 0 ?
+	store.favourites.map((item, index) => 
+	<li key={index}>{item} 
+	<button type="button" className="btn-close" aria-label="Close" onClick={()=>actions.deleteFromFavourites(item)}></button>
+	</li>) 
+	: <li><a className="dropdown-item" href="#">Empty</a></li>}
   </ul>
 </div>
 				

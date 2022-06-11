@@ -14,8 +14,21 @@ export const StarshipsView = props => {
 
 	return (
 		<div className="jumbotron">
-			<h1 className="display-4">Starship: {store.starship.name}</h1>
-
+			<h1 className="display-4">{store.starship.name}</h1>
+		
+			<div className="row">
+				<div className="col">
+					<img src={`https://starwars-visualguide.com/assets/img/starships/${params.uid}.jpg`}></img>
+				</div>
+				<div className="col">
+				
+					<h3>Consumables: {store.starship.consumables}</h3>
+					<h3>Crew: {store.starship.crew}</h3>
+					<h3>Manufacturer: {store.starship.manufacturer}</h3>
+					<h3>Passengers: {store.starship.passengers}</h3>
+			
+				</div>
+			</div>
 			<hr className="my-4" />
 
 			<Link to="/">

@@ -18,10 +18,11 @@ const Planets = () => {
             <img src={`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`} className="card-img-top" alt="..."></img>
             <div className="card-body">
               <h5 className="card-title">{planet.name}</h5>
-              <p className="card-text">{planet.url}</p>
+              
               <Link to={"/planetsView/" + planet.uid}>
                   <a href="#" className="btn btn-primary" >More Details</a>
                   </Link>
+                  <a href="#" className="btn btn-secondary" onClick={()=>actions.addToFavourites(`${planet.name}`)}>♡</a>
             </div>
           </div>
         )  }

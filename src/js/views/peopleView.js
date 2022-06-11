@@ -15,10 +15,18 @@ export const PeopleView = props => {
 	return (
 		<div className="jumbotron">
 			<h1 className="display-4">{store.person.name}</h1>
-<h3>Gender: {store.person.gender}</h3>
-<h3>Eye Color: {store.person.eye_color}</h3>
-<h3>Hair Color: {store.person.hair_color}</h3>
-<h3>Height: {store.person.height}</h3>
+			<div className="row">
+				<div className="col">
+					<img src={`https://starwars-visualguide.com/assets/img/characters/${params.uid}.jpg`}></img>
+				</div>
+				<div className="col">
+					<h3>Gender: {store.person.gender}</h3>
+					<h3>Eye Color: {store.person.eye_color}</h3>
+					<h3>Hair Color: {store.person.hair_color}</h3>
+					<h3>Height: {store.person.height}</h3>
+				</div>
+			</div>
+
 			<hr className="my-4" />
 
 			<Link to="/">

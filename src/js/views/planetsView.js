@@ -14,8 +14,18 @@ export const PlanetsView = props => {
 
 	return (
 		<div className="jumbotron">
-			<h1 className="display-4">Planet: {store.planet.name}</h1>
-
+			
+			<h1 className="display-4">{store.person.name}</h1>
+			<div className="row">
+				<div className="col">
+					<img src={`https://starwars-visualguide.com/assets/img/planets/${params.uid}.jpg`}></img>
+				</div>
+				<div className="col">
+					<h3>Climate: {store.planet.climate}</h3>
+					<h3>Population: {store.planet.population}</h3>
+					<h3>Terrain: {store.planet.terrain}</h3>
+				</div>
+			</div>
 			<hr className="my-4" />
 
 			<Link to="/">
